@@ -13,7 +13,6 @@ export const getQuote = async () => {
     const author = randomQuote.author;
     let afterComma = false;
     const cleanedAuthorString = author.split('').reduce((result, element) => {
-        console.log(result)
         if (element === ',') {
             afterComma = true;
         }
@@ -23,7 +22,6 @@ export const getQuote = async () => {
             return result
         }
     })
-    console.log(cleanedAuthorString);
     quoteElement.textContent = `"${quote}"`;
     authorElement.textContent = `~ ${cleanedAuthorString}`;
 }

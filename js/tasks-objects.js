@@ -1,6 +1,11 @@
 'use strict'
-import { addEventListenersForOneTask, tasksBox } from "./main.js";
-import { saveSession } from "./session.js";
+import {
+    addEventListenersForOneTask,
+    tasksBox
+} from "./main.js";
+import {
+    saveSession
+} from "./session.js";
 
 
 export const addTask = (taskClasses = 'task', content = '', checkClasses = 'fa-check fa-solid') => {
@@ -10,9 +15,9 @@ export const addTask = (taskClasses = 'task', content = '', checkClasses = 'fa-c
     saveSession();
 }
 
-function createOneTask(taskClasses = 'task',  content = '', checkClasses = 'fa-check fa-solid'){
-    const addMultipleClasses = (string, element) => string.split(' ').forEach(singleClass => element.classList.add(singleClass));
+function createOneTask(taskClasses = 'task', content = '', checkClasses = 'fa-check fa-solid') {
     const task = document.createElement('div');
+    const addMultipleClasses = (string, element) => string.split(' ').forEach(singleClass => element.classList.add(singleClass));
     addMultipleClasses(taskClasses, task);
     task.setAttribute('draggable', 'true');
     const checkBox = document.createElement('div')
@@ -27,11 +32,9 @@ function createOneTask(taskClasses = 'task',  content = '', checkClasses = 'fa-c
     pInput.textContent = content;
     const deleteBtn = document.createElement('p');
     deleteBtn.classList.add('delete-task')
-    deleteBtn.innerText = 'x'; 
-    task.appendChild(checkBox) 
-    task.appendChild(pInput) 
-    task.appendChild(deleteBtn) 
-    return task; 
+    deleteBtn.innerText = 'x';
+    task.appendChild(checkBox)
+    task.appendChild(pInput)
+    task.appendChild(deleteBtn)
+    return task;
 }
-
-

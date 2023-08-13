@@ -73,7 +73,6 @@ export const addEventListenersForOneTask = () => {
         const textContentforUndo = currentText.textContent;
         const taskClassesForUndo = currentDeleteButton.parentElement.classList;
         const checkMarkClassesForUndo = currentCheckMark.classList
-        console.log(checkMarkClassesForUndo);
         const copyForUndo = {
             innerHTML: textContentforUndo,
             classes: [
@@ -136,8 +135,9 @@ function undoEvent() {
 }
 
 export function getCurrentElement(className) {
-    const currentTasksAmount = document.querySelectorAll('.task').length;
     const allElementsWithThisClass = document.querySelectorAll(`.${className}`)
-    const currentElement = allElementsWithThisClass[currentTasksAmount - 1];
+    const arrayLength = allElementsWithThisClass.length
+    const currentElement = allElementsWithThisClass[arrayLength - 1];
+
     return currentElement
 }
