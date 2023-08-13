@@ -1,0 +1,186 @@
+:root {
+  --black: #487491;
+  --lightblack: #275b7e;
+  --betweenblack: #00111d;
+  --white: #c0d8d7;
+  --red: #ca0000;
+  --darkgreen: #50ad8a;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  border-radius: 25px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--black);
+  font-family: monospace;
+  width: auto;
+  height: auto;
+}
+body .wrapper {
+  display: inherit;
+  justify-content: inherit;
+  flex-direction: column;
+  max-width: 1000px;
+  max-width: 90%;
+  min-height: 100vh;
+}
+body main {
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--white);
+  width: 100%;
+  min-height: 890px;
+  box-shadow: 2px 2px 5px 5px #00000050;
+}
+body main .tasks {
+  padding-top: 50px;
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  height: 100%;
+  text-align: right;
+  padding-bottom: 50px;
+}
+body main .tasks button.add-task {
+  position: absolute;
+  line-height: 2rem;
+  width: auto;
+  padding: 1% 5%;
+  font-size: 1.5rem;
+  background: linear-gradient(var(--white), var(--darkgreen));
+  color: var(--lightblack);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px 1px #00000050;
+  bottom: 1%;
+  right: 0;
+  cursor: pointer;
+  transform: translateY(-50px);
+}
+body main .tasks button.undo {
+  position: absolute;
+  line-height: 2rem;
+  width: auto;
+  padding: 0 3%;
+  bottom: 0;
+  left: 20px;
+  cursor: pointer;
+  padding: 10px 23px;
+  background-color: var(--black);
+  border: 2px solid var(--white);
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  border-radius: 0;
+  color: var(--darkgreen);
+  font-size: 50px;
+  transform: translateY(-75px);
+  box-shadow: 2px 2px 2px 1px #00000050;
+}
+body main .tasks .task {
+  position: relative;
+  left: -2%;
+  width: 95%;
+  height: auto;
+  min-height: 75px;
+  background-color: var(--white);
+  margin: 20px;
+  border-top-left-radius: 55px;
+  border-bottom-left-radius: 50px;
+  box-shadow: 2px 2px 5px 3px #00000050;
+  padding: 10px;
+  text-align: left;
+  cursor: grab;
+}
+body main .tasks .task .check-box {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 85px;
+  aspect-ratio: 1;
+  border: 5px solid var(--black);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 1px #00000050;
+}
+body main .tasks .task .check-box .fa-check {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 400%;
+  color: transparent;
+}
+body main .tasks .task p.text-content {
+  position: relative;
+  left: 5%;
+  padding-left: 10px;
+  color: var(--betweenblack);
+  line-height: 4.5rem;
+  word-wrap: break-word;
+  font-size: 2.5rem;
+  margin: 0 0 0 12%;
+  width: 75%;
+  cursor: text;
+}
+body main .tasks .task p.delete-task {
+  position: absolute;
+  color: var(--red);
+  font-size: 70px;
+  top: 0%;
+  right: 0%;
+  cursor: pointer;
+}
+
+header {
+  width: 100%;
+  text-align: center;
+}
+header h1 {
+  color: var(--white);
+  font-size: 6rem;
+  vertical-align: top;
+}
+header #quote {
+  margin: 20px auto 50px;
+  max-width: 80%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+header #quote h2 {
+  font-size: 2rem;
+  color: var(--darkgreen);
+}
+header #quote h3 {
+  font-size: 1.5rem;
+  color: var(--darkgreen);
+  text-align: right;
+  transform: translateX(-2rem);
+}
+
+.task-done {
+  background-color: var(--darkgreen) !important;
+}
+
+.task-done-check-mark {
+  color: var(--lightblack) !important;
+}
+
+[contentEditable=true]:empty:not(:focus):before {
+  content: attr(data-placeholder);
+  color: var(--black);
+}
+
+.dragging {
+  opacity: 0.5;
+  transform: scale(0.99);
+}
+
+.hidden {
+  display: none;
+}

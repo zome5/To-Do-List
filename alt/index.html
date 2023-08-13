@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Draggable Divs</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      max-width: 500px;
+      height: 100px;
+      border: 1px solid #ccc;
+    }
+    .draggable {
+      width: 80px;
+      height: 80px;
+      background-color: #ffcc00;
+      border: 1px solid #999;
+      text-align: center;
+      line-height: 80px;
+      cursor: grab;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="draggable">1</div>
+    <div class="draggable">2</div>
+    <div class="draggable">3</div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
